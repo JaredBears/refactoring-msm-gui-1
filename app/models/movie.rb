@@ -13,4 +13,12 @@
 #  director_id :integer
 #
 class Movie < ApplicationRecord
+
+  def director
+    if self.director_id == nil
+      return nil
+    else
+      Director.find(self.director_id)
+    end
+  end
 end
